@@ -18,9 +18,27 @@ var fireNumber = [];
 var userNumber = [];
 var isIncluded = false;
 var punteggio = 0;
+var max;
+var mode = prompt('Inserisci la difficoltà !', 'Hard-' + 'Medium-' + 'Easy').toLowerCase();
+
+switch (mode) {
+    case 'hard':
+        max = 50;
+        break
+    case 'medium':
+        max = 80;
+        break
+    case 'easy':
+        max = 100;
+        break
+    default:
+        alert('Non hai inserito una scelta valida!');
+}
+
+console.log(max)
 
 while (fireNumber.length < 16) {
-    var bombNumber = randomNumber(100, 1);
+    var bombNumber = randomNumber(max, 1);
     if (!fireNumber.includes(bombNumber)) {
         fireNumber.push(bombNumber);
     }
@@ -38,7 +56,7 @@ while (userNumber.length < 84 && isIncluded === false) {
     }
     if (fireNumber.includes(choiceNumber)) {
         isIncluded = true;
-        alert('Hai perso!' + 'Il tuo punteggio è ' + punteggio);
+        alert('Hai perso! ' + 'Il tuo punteggio è ' + punteggio);
     } else {
         punteggio++;
     }
