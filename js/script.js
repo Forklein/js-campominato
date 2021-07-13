@@ -16,6 +16,8 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio. */
 
 var fireNumber = [];
 var userNumber = [];
+var isIncluded = false;
+var punteggio = 0;
 
 while (fireNumber.length < 16) {
     var bombNumber = randomNumber(100, 1);
@@ -25,23 +27,21 @@ while (fireNumber.length < 16) {
 }
 console.log(fireNumber);
 
-var i = 0;
-while (i < 84) {
-    var isIncluded = false;
+while (userNumber.length < 84 && isIncluded === false) {
     var choiceNumber = prompt('Inserisci un numero');
-    if (!userNumber.includes(choiceNumber) && isIncluded === false) {
+    if (!userNumber.includes(choiceNumber)) {
         userNumber.push(choiceNumber);
-        i++;
-        if (fireNumber.includes(choiceNumber)) {
-            isIncluded = true;
-            alert('Hai perso!' + 'Il tuo punteggio è ' + i);
-            i = 84;
-        }
     } else {
         alert('Il numero è già stato inserito!');
     }
+    if (fireNumber.includes(choiceNumber)) {
+        isIncluded = true;
+        alert('Hai perso!' + 'Il tuo punteggio è ');
+    }
 }
 console.log(userNumber);
+
+
 
 // Is in Array function 
 function isinArray(element, array) {
@@ -53,8 +53,6 @@ function isinArray(element, array) {
         }
     }
 }
-
-
 // Random Number function 
 function randomNumber(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + 1;
