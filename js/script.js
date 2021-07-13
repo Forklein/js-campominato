@@ -36,6 +36,7 @@ switch (mode.toLowerCase()) {
         max = 100;
         break
     default:
+        alert('Dato non corretto!');
 }
 
 console.log(max)
