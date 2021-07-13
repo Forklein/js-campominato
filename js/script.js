@@ -15,6 +15,7 @@ Se il numero scelto dall'utente è presente tra i numeri bomba, la partita termi
 Quando la partita termina, comunichiamo all'utente il suo punteggio. */
 
 var fireNumber = [];
+var userNumber = [];
 
 while (fireNumber.length < 16) {
     var bombNumber = randomNumber(100, 1);
@@ -23,6 +24,24 @@ while (fireNumber.length < 16) {
     }
 }
 console.log(fireNumber);
+
+var i = 0;
+while (i < 84) {
+    var isIncluded = false;
+    var choiceNumber = prompt('Inserisci un numero');
+    if (!userNumber.includes(choiceNumber) && isIncluded === false) {
+        userNumber.push(choiceNumber);
+        i++;
+        if (fireNumber.includes(choiceNumber)) {
+            isIncluded = true;
+            alert('Hai perso!' + 'Il tuo punteggio è ' + i);
+        }
+    } else {
+        alert('Il numero è già stato inserito!');
+    }
+}
+console.log(userNumber);
+
 
 // Random Number function 
 function randomNumber(max, min) {
