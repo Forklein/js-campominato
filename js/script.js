@@ -26,17 +26,21 @@ while (fireNumber.length < 16) {
     }
 }
 console.log(fireNumber);
+console.log(userNumber);
 
 while (userNumber.length < 84 && isIncluded === false) {
-    var choiceNumber = prompt('Inserisci un numero');
+    var choiceNumber = parseInt(prompt('Inserisci un numero'));
     if (!userNumber.includes(choiceNumber)) {
         userNumber.push(choiceNumber);
+        console.log(userNumber);
     } else {
         alert('Il numero è già stato inserito!');
     }
     if (fireNumber.includes(choiceNumber)) {
         isIncluded = true;
-        alert('Hai perso!' + 'Il tuo punteggio è ');
+        alert('Hai perso!' + 'Il tuo punteggio è ' + punteggio);
+    } else {
+        punteggio++;
     }
 }
 console.log(userNumber);
