@@ -19,9 +19,13 @@ var userNumber = [];
 var isIncluded = false;
 var punteggio = 0;
 var max;
-var mode = prompt('Inserisci la difficoltà !', 'Hard-' + 'Medium-' + 'Easy').toLowerCase();
+var mode = prompt('Inserisci la difficoltà !', 'Hard-' + 'Medium-' + 'Easy');
 
-switch (mode) {
+while (!mode || mode.trim() === '') {
+    mode = prompt('Inserisci la difficoltà !', 'Hard-' + 'Medium-' + 'Easy');
+}
+
+switch (mode.toLowerCase()) {
     case 'hard':
         max = 50;
         break
@@ -32,7 +36,6 @@ switch (mode) {
         max = 100;
         break
     default:
-        alert('Non hai inserito una scelta valida!');
 }
 
 console.log(max)
@@ -46,8 +49,12 @@ while (fireNumber.length < 16) {
 console.log(fireNumber);
 console.log(userNumber);
 
-while (userNumber.length < 84 && isIncluded === false) {
+while (userNumber.length < (max - 16) && isIncluded === false) {
     var choiceNumber = parseInt(prompt('Inserisci un numero'));
+    while (!choiceNumber || isNaN(choiceNumber)) {
+        choiceNumber = parseInt(prompt('Inserisci un numero'));
+    }
+    var totalScore = max - 16;
     if (!userNumber.includes(choiceNumber)) {
         userNumber.push(choiceNumber);
         console.log(userNumber);
@@ -56,7 +63,7 @@ while (userNumber.length < 84 && isIncluded === false) {
     }
     if (fireNumber.includes(choiceNumber)) {
         isIncluded = true;
-        alert('Hai perso! ' + 'Il tuo punteggio è ' + punteggio);
+        alert('Hai perso! ' + 'Il tuo punteggio è ' + punteggio + ' su ' + totalScore);
     } else {
         punteggio++;
     }
