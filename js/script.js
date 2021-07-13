@@ -28,13 +28,13 @@ while (!mode || mode.trim() === '') {
 switch (mode.toLowerCase()) {
     case 'hard':
         max = 50;
-        break
+        break;
     case 'medium':
         max = 80;
-        break
+        break;
     case 'easy':
         max = 100;
-        break
+        break;
     default:
         alert('Dato non corretto!');
 }
