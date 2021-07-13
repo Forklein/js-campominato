@@ -13,3 +13,18 @@ guadagna un punto e poi gli chiediamo un altro numero.
 
 Se il numero scelto dall'utente è presente tra i numeri bomba, la partita termina.
 Quando la partita termina, comunichiamo all'utente il suo punteggio. */
+
+var fireNumber = [];
+
+while (fireNumber.length < 16) {
+    var bombNumber = randomNumber(100, 1);
+    if (!fireNumber.includes(bombNumber)) {
+        fireNumber.push(bombNumber);
+    }
+}
+console.log(fireNumber);
+
+// Random Number function 
+function randomNumber(max, min) {
+    return Math.floor(Math.random() * (max - min + 1)) + 1;
+}
