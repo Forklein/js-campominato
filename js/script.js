@@ -35,12 +35,24 @@ while (i < 84) {
         if (fireNumber.includes(choiceNumber)) {
             isIncluded = true;
             alert('Hai perso!' + 'Il tuo punteggio è ' + i);
+            i = 84;
         }
     } else {
         alert('Il numero è già stato inserito!');
     }
 }
 console.log(userNumber);
+
+// Is in Array function 
+function isinArray(element, array) {
+    for (var i = 0; i < array.length; i++) {
+        if (element === array[i]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 
 // Random Number function 
