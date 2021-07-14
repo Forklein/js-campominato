@@ -7,3 +7,28 @@
 body{
     background-color: brown;
 }
+
+.d-flex{
+    display: flex;
+}
+
+.container{
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 50%;
+    text-shadow: 1px 1px 5px gold;
+    text-align: center;
+    color: blue;
+    cursor: pointer;
+}
+
+.text{
+    margin-bottom: 20px;
+    font-size: 25px;
+}
