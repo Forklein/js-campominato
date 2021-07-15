@@ -96,5 +96,5 @@ function isinArray(element, array) {
 }
 // Random Number function 
 function randomNumber(max, min) {
-    return Math.floor(Math.random() * (max - min + 1)) + 1;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
