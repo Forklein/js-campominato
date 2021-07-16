@@ -39,15 +39,11 @@ function start() {
         case 'hard':
             max = 50;
             break;
-        case 'medium':
-            max = 80;
-            break;
         case 'easy':
             max = 100;
             break;
         default:
             max = 80;
-            break;
     }
 
     console.log(max)
